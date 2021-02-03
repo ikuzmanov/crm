@@ -16,6 +16,7 @@
 
                 {% for customer in customers %}
                 <tr>
+                    <td><a class="btn btn-sm btn-primary" href="{% url 'customer' customer.id %}">View</td>
                     <td>
                         {{customer.name}}
                     </td>
