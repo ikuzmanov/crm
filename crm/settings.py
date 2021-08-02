@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '_%)w!yn1-e+73v33^p8s9n$4x-ea#qn!ei6yq#@kqlaq-xc)6!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['crm-ivaylo.herokuapp.com', '127.0.0.1', 'localhost']
 
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'accounts',
     'crispy_forms',
     'django_filters',
-
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
