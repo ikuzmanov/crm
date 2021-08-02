@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Customer(models.Model):
     name = models.CharField(max_length=50, null=True)
     phone = models.IntegerField(null=True)
@@ -41,7 +42,7 @@ class Order(models.Model):
     STATUS = (
         ('Pending', 'Pending'),
         ('For delivery', 'For delivery'),
-        ('delivered', 'delivered'),
+        ('Delivered', 'Delivered'),
     )
     customer = models.ForeignKey(
         Customer, null=True, on_delete=models.SET_NULL)
