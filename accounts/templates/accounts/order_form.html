@@ -7,8 +7,16 @@
         <div class="card card-body">
             <form action="" method="POST" class="uniForm">
                 {% csrf_token %}
+                {{formset.management_form}}
+                {% for form in formset %}
+                <div class="jumbotron" id="jumbo-list">
+                    {{ form |crispy }}
+                </div>
+                {% endfor %}
+                <br>
                 {{ form|crispy }}
                 <input class="btn btn-success" type="submit" name="Submit">
+            </form>
             </form>
         </div>
     </div>

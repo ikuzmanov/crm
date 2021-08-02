@@ -9,8 +9,9 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
 # Create your views here.
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 
 
 def registerPage(request):
@@ -134,3 +135,8 @@ def deleteOrder(request, pk):
 class CustomerCreateView(CreateView):
     model = Customer
     fields = ['name', 'phone', 'email']
+
+
+class CustomerDeleteView(DeleteView):
+    model = Customer
+    success_url = reverse_lazy('home')
