@@ -10,6 +10,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 # Create your views here.
+from django.views.generic.edit import CreateView
 
 
 def registerPage(request):
@@ -126,3 +127,10 @@ def deleteOrder(request, pk):
         return redirect('/')
     context = {'order': order}
     return render(request, 'accounts/delete.html', context)
+
+
+# using CBVs this time
+
+class CustomerCreateView(CreateView):
+    model = Customer
+    fields = ['name', 'phone', 'email']
