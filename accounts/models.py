@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-
 class Customer(models.Model):
     name = models.CharField(max_length=50, null=True)
     phone = models.IntegerField(null=True)
@@ -21,7 +20,6 @@ class Tag (models.Model):
 
 
 class Product(models.Model):
-
     CATEGORY = (
         ('Food', 'Food'),
         ('Drink', 'Drink'),
@@ -40,7 +38,6 @@ class Product(models.Model):
 
 
 class Order(models.Model):
-
     STATUS = (
         ('Pending', 'Pending'),
         ('For delivery', 'For delivery'),
